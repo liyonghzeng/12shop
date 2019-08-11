@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class OrderController extends Controller
 {
-    //
+    //  ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓没做完↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓逻辑不正确
     public function  index(Request $request)
     {
         $user_id=Auth::id();
@@ -93,7 +93,7 @@ class OrderController extends Controller
         $cart_num=rtrim($name,',');
         return $cart_num;
     }
-
+    //  ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ 逻辑不正确
 
     ///**************************
     //购买一件
