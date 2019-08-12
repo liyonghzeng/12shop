@@ -15,11 +15,11 @@
 //Route::get('/', function () {
 //
 ////    echo $cc;
-//////    return view('welcome');
+//    return view('welcome');
 //});
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 //展示页面
 Route::get('/', 'HomeListController@index');

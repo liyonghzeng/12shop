@@ -531,6 +531,8 @@
 					if(data.error == 0)
 					{
 						alert("添加购物车成功");
+					}else if(data.error == 55){
+						location.href = 'http://12shop.com/login';
 					}else{
 						alert("添加购物车失败");
 					}
@@ -553,6 +555,8 @@
 						if(data.error == 0)
 						{
 							alert("添加购物车成功");
+						}else if(data.error == 55){
+							location.href = 'http://12shop.com/login';
 						}else{
 
 							alert(data.msg);
@@ -561,7 +565,7 @@
 					}
 				});
 			}else{
-				alert(2222);
+				history.go(0);
 			}
 
 		})

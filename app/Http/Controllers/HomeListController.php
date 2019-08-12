@@ -17,7 +17,6 @@ class HomeListController extends Controller
         ];
         $goods_all =Goods::where($where)->get();
         return view('reception/index',['goods_all'=>$goods_all]);
-
     }
 
     //商品展示
@@ -40,7 +39,7 @@ class HomeListController extends Controller
                 'error'=>55,
                 'msg'=>'请登录后操作'
             ];
-            return $json_date;
+           header('refresh:3;url="/login"');
         }
         $goods_id=$request->input('goods_id');
 
@@ -73,7 +72,6 @@ class HomeListController extends Controller
                 ];
                 $cart_Add= Cartmodel::insert($cart_where);
             }
-
             if($cart_Add)
             {
                 $json_date=[
@@ -106,7 +104,8 @@ class HomeListController extends Controller
                 'error'=>55,
                 'msg'=>'请登录后操作'
             ];
-            return $json_date;
+            echo json_encode($json_date);
+            header('refresh:3;url="/login"');
         }
         $where = [
             'user_id'=>auth::id(),
@@ -124,7 +123,8 @@ class HomeListController extends Controller
                 'error'=>55,
                 'msg'=>'请登录后操作'
             ];
-            return $json_date;
+            echo json_encode($json_date);
+            header('refresh:3;url="/login"');
         }
         $cartid= $request->input('cartid');
         $where = [
@@ -159,7 +159,8 @@ class HomeListController extends Controller
                 'error'=>55,
                 'msg'=>'请登录后操作'
             ];
-            return $json_date;
+            echo json_encode($json_date);
+            header('refresh:3;url="/login"');
         }
        $num= $request->input('cartnum');
        $cartid= $request->input('cartid');
